@@ -1,6 +1,6 @@
 class FreshTomatoes::CLI
     def run
-        self.greeting
+        puts "\nWelcome to Fresh Tomatoes"
         self.list_movies
         self.pick_movie
         loop do
@@ -15,10 +15,6 @@ class FreshTomatoes::CLI
                 puts "\nThat is not a valid response."
             end
         end
-    end
-
-    def greeting
-        puts "\nWelcome to Fresh Tomatoes!"
     end
 
     def list_movies
