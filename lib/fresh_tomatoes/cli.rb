@@ -36,11 +36,11 @@ class FreshTomatoes::CLI
     end
 
     def display_movie_details(movie)
-        puts "\n-#{movie.title}-"
-        puts "Tomatometer: #{movie.tomatometer}"
+        puts "\n-#{movie.title}-\n\n"
+        puts "Tomatometer:    #{movie.tomatometer}"
         puts "Audience Score: #{movie.audience_score}"
-        puts "Rating: #{movie.rating}"
-        puts "Runtime: #{movie.runtime}"
-        puts "Description: #{movie.description}"
+        puts "Rating:         #{movie.rating}"
+        puts "Runtime:        #{movie.runtime}"
+        puts "\nDescription:  \n#{movie.description}"
     end
 end
