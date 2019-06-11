@@ -13,6 +13,10 @@ class FreshTomatoes::Scraper
     end
 
     def self.scrape_details(movie)
-
+        pg = Nokogiri::HTML(open(movie.url))
+        movie.description = pg.css("div#movieSynopsis").text.strip
+        movie.audience_score = pg.css("div.audience-score span.mop-ratings-wrap__percentage").text.strip
+        movie.rating = pg.css("div:contains('Rating')+div.meta-value").text.strip
+        movie.runtime = pg.css("div:contains('Runtime')+div time").text.strip
     end
 end
