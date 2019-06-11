@@ -6,7 +6,9 @@ class FreshTomatoes::Scraper
         movies = pg.css("table#Top-Box-Office tr.sidebarInTheaterOpening")
         movies.each do |m|
             title = m.css("td.middle_col").text.strip
-            binding.pry
+            tomatometer = m.css("span.tMeterScore").text
+            url = "https://www.rottentomatoes.com"+m.css("a").attribute("href").value
+            FreshTomatoes::Movie.new(title, url, tomatometer)
         end
     end
 
