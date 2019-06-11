@@ -11,13 +11,14 @@ class FreshTomatoes::CLI
 
     def list_movies
         puts "Here is a list of the Certified Fresh movies in theaters now:"
-        Movie.all.each.with_index(1) {|m, i| puts "#{i}. #{m.title}"}
+        FreshTomatoes::Scraper.scrape_movies
+        FreshTomatoes::Movie.all.each.with_index(1) {|m, i| puts "#{i}. #{m.title}"}
     end
 
     def pick_movie
         puts "Please enter the number of the movie you are interested in:"
-        input = gets.strip
-        movie = Movie.all[input-1]
+        input = gets.strip.to_i
+        movie = FreshTomatoes::Movie.all[input-1]
         FreshTomatoes::Scraper.scrape_details(movie)
         display_movie_details(movie)
     end
