@@ -28,7 +28,7 @@ class FreshTomatoes::CLI
         input = gets.strip.to_i
         if input.between?(1,FreshTomatoes::Movie.all.length)
             movie = FreshTomatoes::Movie.all[input-1]
-            FreshTomatoes::Scraper.scrape_details(movie)
+            FreshTomatoes::Scraper.scrape_details(movie) unless movie.description
             display_movie_details(movie)
         else
             puts "\nSorry, that is not a valid option."
