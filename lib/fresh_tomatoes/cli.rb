@@ -1,6 +1,12 @@
 class FreshTomatoes::CLI
     def run
-        puts "\nWelcome to Fresh Tomatoes"
+        puts "     
+     ____            __     ______                __             
+    / __/______ ___ / /    /_  __/__  __ _  ___ _/ /____  ___ ___
+   / _// __/ -_|_-</ _ \\    / / / _ \\/  ' \\/ _ `/ __/ _ \\/ -_|_-<
+  /_/ /_/  \\__/___/_//_/   /_/  \\___/_/_/_/\\_,_/\\__/\\___/\\__/___/
+                                                                     "
+        puts "\nWelcome to Fresh Tomatoes!"
         self.list_movies
         self.pick_movie
         loop do
