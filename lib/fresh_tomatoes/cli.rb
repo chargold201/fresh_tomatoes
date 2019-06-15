@@ -1,12 +1,12 @@
 class FreshTomatoes::CLI
     def run
-        puts "     
+        puts Rainbow("     
      ____            __     ______                __             
     / __/______ ___ / /    /_  __/__  __ _  ___ _/ /____  ___ ___
    / _// __/ -_|_-</ _ \\    / / / _ \\/  ' \\/ _ `/ __/ _ \\/ -_|_-<
   /_/ /_/  \\__/___/_//_/   /_/  \\___/_/_/_/\\_,_/\\__/\\___/\\__/___/
-                                                                     "
-        puts "\nWelcome to Fresh Tomatoes!"
+                                                                     ").green
+        puts Rainbow("\nWelcome to Fresh Tomatoes!").red
         self.list_movies
         self.pick_movie
         loop do
@@ -24,7 +24,7 @@ class FreshTomatoes::CLI
     end
 
     def list_movies
-        puts "\nHere are the top 10 Certified Fresh movies in theaters now:"
+        puts "\n\nHere are the top 10 Certified Fresh movies in theaters now:\n\n"
         FreshTomatoes::Scraper.scrape_movies
         FreshTomatoes::Movie.all.each.with_index(1) {|m, i| puts "#{i}. #{m.title} - #{m.tomatometer}"}
     end
@@ -42,11 +42,11 @@ class FreshTomatoes::CLI
     end
 
     def display_movie_details(movie)
-        puts "\n-#{movie.title}-\n\n"
-        puts "Tomatometer:    #{movie.tomatometer}"
-        puts "Audience Score: #{movie.audience_score}"
-        puts "Rating:         #{movie.rating}"
-        puts "Runtime:        #{movie.runtime}"
-        puts "\nDescription:  \n#{movie.description}"
+        puts Rainbow("\n\n-#{movie.title}-\n").blue
+        puts Rainbow("Tomatometer:    ").cyan+"#{movie.tomatometer}"
+        puts Rainbow("Audience Score: ").cyan+"#{movie.audience_score}"
+        puts Rainbow("Rating:         ").cyan+"#{movie.rating}"
+        puts Rainbow("Runtime:        ").cyan+"#{movie.runtime}"
+        puts Rainbow("\nDescription:").cyan+"\n#{movie.description}"
     end
 end

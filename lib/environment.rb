@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'pry'
 require 'nokogiri'
+require 'rainbow'
 
 require_relative "./fresh_tomatoes/version"
 require_relative "./fresh_tomatoes/cli"
