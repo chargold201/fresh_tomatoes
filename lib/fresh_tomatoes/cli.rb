@@ -6,7 +6,9 @@ class FreshTomatoes::CLI
    / _// __/ -_|_-</ _ \\    / / / _ \\/  ' \\/ _ `/ __/ _ \\/ -_|_-<
   /_/ /_/  \\__/___/_//_/   /_/  \\___/_/_/_/\\_,_/\\__/\\___/\\__/___/
                                                                      ").green
-        puts Rainbow("\nWelcome to Fresh Tomatoes!").red
+        puts Rainbow("\n**************************").red
+        puts Rainbow("Welcome to Fresh Tomatoes!").red
+        puts Rainbow("**************************").red
         self.list_movies
         self.pick_movie
         loop do
@@ -42,7 +44,7 @@ class FreshTomatoes::CLI
     end
 
     def display_movie_details(movie)
-        puts Rainbow("\n\n-#{movie.title}-\n").blue
+        puts Rainbow("\n\n--#{movie.title}--\n").blue
         puts Rainbow("Tomatometer:    ").cyan+"#{movie.tomatometer}"
         puts Rainbow("Audience Score: ").cyan+"#{movie.audience_score}"
         puts Rainbow("Rating:         ").cyan+"#{movie.rating}"
