@@ -1,6 +1,7 @@
 class FreshTomatoes::Movie
     @@all = []
-    attr_accessor :title, :description, :tomatometer, :audience_score, :rating, :runtime, :url
+    attr_reader :title, :url, :tomatometer
+    attr_accessor :audience_score, :rating, :runtime, :description
 
     def initialize(title, url, tomatometer)
         @title = title
