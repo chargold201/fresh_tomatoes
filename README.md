@@ -6,6 +6,10 @@ This gem scrapes the website Rotten Tomatoes in order to present a list of the "
 
 Upon running the program, you will be greeted and presented with a list of movies. You will then be prompted to enter a number corresponding to the movie you'd like more information about. Upon entering a valid number, you will be presented with details about the movie and prompted again. If you'd like to view another movie, type "y" or "yes". If not, type "n" or "no" to exit the program.
 
+## Installation
+
+To install, simply clone this repository to your local machine. You can then run the file bin/fresh_tomatoes to start the program.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
