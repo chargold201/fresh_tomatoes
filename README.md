@@ -2,13 +2,28 @@
 
 This gem scrapes the website Rotten Tomatoes in order to present a list of the "Certified Fresh" (top rated) movies currently in theaters. The user can then choose a movie from the list in order to view more information about it.
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+    $ gem 'fresh_tomatoes'
+
+And then execute:
+
+    $ bundle
+    
+Or install it yourself as:
+
+    $ gem install fresh_tomatoes
+    
 ## Usage
+
+To start the program, enter the following code:
+
+    $ bin/fresh_tomatoes
 
 Upon running the program, you will be greeted and presented with a list of movies. You will then be prompted to enter a number corresponding to the movie you'd like more information about. Upon entering a valid number, you will be presented with details about the movie and prompted again. If you'd like to view another movie, type "y" or "yes". If not, type "n" or "no" to exit the program.
 
-## Installation
-
-To install, simply clone this repository to your local machine. You can then run the file bin/fresh_tomatoes to start the program.
 
 ## Development
 
