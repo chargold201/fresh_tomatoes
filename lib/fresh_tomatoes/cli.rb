@@ -28,14 +28,15 @@ class FreshTomatoes::CLI
     def list_movies
         puts "\n\nHere are the top 10 Certified Fresh movies in theaters now:\n\n"
         FreshTomatoes::Scraper.scrape_movies
-        FreshTomatoes::Movie.all.each.with_index(1) {|m, i| puts "#{i}. #{m.title} - #{m.tomatometer}"}
+        FreshTomatoes::Movie.sorted_movies.each.with_index(1) {|m, i| puts "#{i}. #{m.title} - #{m.tomatometer}"}
+        # binding.pry
     end
 
     def pick_movie
         puts "\nPlease enter the number of the movie you are interested in:"
         input = gets.strip.to_i
         if input.between?(1,FreshTomatoes::Movie.all.length)
-            movie = FreshTomatoes::Movie.all[input-1]
+            movie = FreshTomatoes::Movie.sorted_movies[input-1]
             FreshTomatoes::Scraper.scrape_details(movie) unless movie.description
             display_movie_details(movie)
         else

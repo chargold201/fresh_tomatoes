@@ -13,4 +13,8 @@ class FreshTomatoes::Movie
     def self.all
         @@all
     end
+
+    def self.sorted_movies
+        @@all.sort {|a, b| a.tomatometer.gsub("%", "").to_i <=> b.tomatometer.gsub("%", "").to_i}
+    end
 end
